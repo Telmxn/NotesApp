@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Home"
+        title = "Qeyd Əlavə et"
         
         let barButton = UIBarButtonItem(image: UIImage(systemName: "clock"), style: .done, target: self, action: #selector(didTapHistoryButton))
         navigationItem.setRightBarButton(barButton, animated: true)
