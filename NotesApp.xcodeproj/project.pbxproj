@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D24015592DD791DC0020FC62 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D24015582DD791DC0020FC62 /* SnapKit */; };
+		D24015A12DD798740020FC62 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D24015A02DD798700020FC62 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D240153F2DD78F620020FC62 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D24015A02DD798700020FC62 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -50,6 +52,7 @@
 		D24015362DD78F620020FC62 = {
 			isa = PBXGroup;
 			children = (
+				D24015A02DD798700020FC62 /* .gitignore */,
 				D24015412DD78F620020FC62 /* NotesApp */,
 				D24015402DD78F620020FC62 /* Products */,
 			);
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D24015A12DD798740020FC62 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
