@@ -8,6 +8,8 @@
 import UIKit
 
 class NoteTableViewCell: UITableViewCell {
+    
+    static let identifier: String = "NoteTableViewCell"
 
     private var stackView: UIStackView = {
         let view = UIStackView()
@@ -54,7 +56,7 @@ class NoteTableViewCell: UITableViewCell {
         }
     }
     
-    private func configure(text: String, date: Date) {
+    func configure(text: String, date: Date) {
         noteTextLabel.text = text
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MMM dd hh:mm"
