@@ -8,7 +8,7 @@
 import Foundation
 
 struct Note: Codable {
-    let id: Int
+    let id: String
     let text: String
     let createdDate: Date
 }
