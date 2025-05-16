@@ -44,9 +44,17 @@ class HomeViewController: UIViewController {
         let barButton = UIBarButtonItem(image: UIImage(systemName: "clock"), style: .done, target: self, action: #selector(didTapHistoryButton))
         navigationItem.setRightBarButton(barButton, animated: true)
         
-        view.backgroundColor = .systemBackground
+        addNoteButton.addTarget(self, action: #selector(didTapAddNoteButton), for: .touchUpInside)
         
         setupUI()
+    }
+    
+    @objc
+    private func didTapAddNoteButton() {
+        if noteTextField.text != "" {
+            var notes = UserDefaultsManager.shared.getNotes()
+            notes.append(.init(id: UUID().uuidString, text: noteTextField.text ?? "", createdDate: Date()))
+        }
     }
     
     @objc
@@ -55,6 +63,7 @@ class HomeViewController: UIViewController {
     }
 
     private func setupUI() {
+        view.backgroundColor = .systemBackground
         view.addSubview(stackView)
         
         [noteTextField, addNoteButton].forEach(stackView.addArrangedSubview)
