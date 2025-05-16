@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  NotesApp
 //
 //  Created by Telman Yusifov on 16.05.25.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     private var stackView: UIStackView = {
         let view = UIStackView()
@@ -39,9 +39,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Home"
+        
+        let barButton = UIBarButtonItem(image: UIImage(systemName: "clock"), style: .done, target: self, action: #selector(didTapHistoryButton))
+        navigationItem.setRightBarButton(barButton, animated: true)
+        
         view.backgroundColor = .systemBackground
         
         setupUI()
+    }
+    
+    @objc
+    private func didTapHistoryButton() {
+        
     }
 
     private func setupUI() {
