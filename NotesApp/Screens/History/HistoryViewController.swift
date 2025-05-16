@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HistoryViewController.swift
 //  NotesApp
 //
 //  Created by Telman Yusifov on 16.05.25.
@@ -7,14 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "History"
+        
         view.backgroundColor = .systemBackground
     }
-
-
 }
-
