@@ -54,6 +54,8 @@ class HomeViewController: UIViewController {
         if noteTextField.text != "" {
             var notes = UserDefaultsManager.shared.getNotes()
             notes.append(.init(id: UUID().uuidString, text: noteTextField.text ?? "", createdDate: Date()))
+            UserDefaultsManager.shared.saveNotes(notes: notes)
+            noteTextField.text = ""
         }
     }
     
