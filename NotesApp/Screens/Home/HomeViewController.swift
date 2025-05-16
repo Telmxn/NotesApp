@@ -51,7 +51,7 @@ class HomeViewController: UIViewController {
     
     @objc
     private func didTapHistoryButton() {
-        
+        navigationController?.pushViewController(HistoryViewController(), animated: true)
     }
 
     private func setupUI() {
