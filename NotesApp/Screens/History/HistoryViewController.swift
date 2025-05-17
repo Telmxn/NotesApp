@@ -53,4 +53,29 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configure(text: notes[indexPath.row].text, date: notes[indexPath.row].createdDate)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
+            self.notes.remove(at: indexPath.row)
+            UserDefaultsManager.shared.saveNotes(notes: self.notes)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { _, _, _ in
+            let alert = UIAlertController(title: "Edit", message: nil, preferredStyle: .alert)
+            alert.addTextField { textField in
+                textField.text = self.notes[indexPath.row].text
+            }
+            let editAction = UIAlertAction(title: "Save", style: .default) { alertAction in
+                self.notes[indexPath.row].text = alert.textFields?.first?.text ?? "No Text"
+                UserDefaultsManager.shared.saveNotes(notes: self.notes)
+                tableView.reloadData()
+            }
+            alert.addAction(editAction)
+            
+            self.present(alert, animated: true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+    }
 }
