@@ -9,6 +9,6 @@ import Foundation
 
 struct Note: Codable {
     let id: String
-    let text: String
+    var text: String
     let createdDate: Date
 }

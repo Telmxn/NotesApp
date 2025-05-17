@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Home"
+        title = "Qeyd Əlavə et"
         
         let barButton = UIBarButtonItem(image: UIImage(systemName: "clock"), style: .done, target: self, action: #selector(didTapHistoryButton))
         navigationItem.setRightBarButton(barButton, animated: true)
@@ -54,6 +54,8 @@ class HomeViewController: UIViewController {
         if noteTextField.text != "" {
             var notes = UserDefaultsManager.shared.getNotes()
             notes.append(.init(id: UUID().uuidString, text: noteTextField.text ?? "", createdDate: Date()))
+            UserDefaultsManager.shared.saveNotes(notes: notes)
+            noteTextField.text = ""
         }
     }
     
